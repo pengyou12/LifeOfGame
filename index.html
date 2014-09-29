@@ -5,17 +5,29 @@
 body {
 background-color: #5B4947;
 }
-canvas {
-margin: 0 auto
+#hint{
+margin-top:100px;
+margin-right:100px;
+float:right;
+font-family: "微软雅黑";
+z-index: 0;
 }
 </style>
 </head>
 <title>LifeOfGame</title>
 <body onkeydown="keyDown(event)">
-<div > 
 <canvas id="myCanvas" style ="border:1px solid #c3c3c3" onmousedown = "beClicked(event)"></canvas>
+<div id="hint">
+游戏说明<br>
+ENTER键随机生成细胞<br>
+空格键开始或暂停游戏<br>
+开始前←↑→↓调整界面大小<br>
+开始后↑↓加快和减慢速度<br>
+支持鼠标点击添加细胞<br>
 </div>
-<script language="JavaScript" src="LifeOfGame.js">
-</script>
+<script language="JavaScript" src="./javascript/logicLayer.js"></script>
+<script language="JavaScript" src="./javascript/presentationLayer.js"></script>
+<script language="JavaScript" src="./javascript/event.js"></script>
+<script language="JavaScript" src="./javascript/init.js"></script>
 </body>
 </html>

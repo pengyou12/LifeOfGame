@@ -1,8 +1,8 @@
-var maxColumns = 80
+var maxColumns = 65
 var minColumns = 1
-var maxRows = 38
+var maxRows = 45
 var minRows = 1
-var columns = 20
+var columns = 60
 var rows = 25
 var runState = 0//0表示没有运行，1表示运行
 var keyState = 0//0表示没有键按下，1表示有键按下
@@ -204,19 +204,12 @@ function beClicked(event)
 		top=document.documentElement.scrollTop;
 		left=document.documentElement.scrollLeft;
 	}
-//	grid[Math.floor((event.y + top)/2/r )-1][Math.floor((event.x+left)/2/r)-1] = 1 - grid[Math.floor((event.y + top)/2/r )-1][Math.floor((event.x+left)/2/r)-1]
-	grid[Math.floor((event.y-8)/(2*r) )][Math.floor((event.x-8)/(2*r))] = 1 - grid[Math.floor((event.y-8)/(2*r) )][Math.floor((event.x-8)/(2*r))]
+	grid[Math.floor((event.offsetY)/(2*r) )][Math.floor((event.offsetX)/(2*r))] = 1 - grid[Math.floor((event.offsetY)/(2*r) )][Math.floor((event.offsetX)/(2*r))]
 	drawGrid(columns,rows,grid)
 }
 generateCell(maxColumns,maxRows)
 generateCellRandom(columns,rows)
 drawGrid(columns,rows,grid)
-
-function autorun()
-{
-	generateCellRandom(columns,rows)
-	setInterval("drawGrid(columns,rows,grid);nextRound(columns,rows,grid)", 10)
-}
 
 
 
