@@ -1,4 +1,4 @@
-function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
+ï»¿function keyDown(e){//æ¥å—æŒ‰é”®æ“ä½œ
 	var keychar
 	if(window.event) // IE
 	{
@@ -10,13 +10,13 @@ function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
 	}
 	switch(keychar)
 	{
-	case 13://ENTER¼üËæ»úÉú³ÉÏ¸°ûÇé¿ö
-		if(runState == 0)//Èç¹ûÊÇ·Ç0(±íÊ¾ÓÎÏ·ÒÑ¾­¿ªÊ¼ÁË)¾ÍÎŞ·¨Ê¹ÓÃENTER¼üÁË
+	case 13://ENTERé”®éšæœºç”Ÿæˆç»†èƒæƒ…å†µ
+		if(runState == 0)//å¦‚æœæ˜¯é0(è¡¨ç¤ºæ¸¸æˆå·²ç»å¼€å§‹äº†)å°±æ— æ³•ä½¿ç”¨ENTERé”®äº†
 		{
 			generateCellRandom(columns,rows)
 		}
 		break;
-	case 32://¿Õ¸ñ¼ü¿ªÊ¼»òÕßÔİÍ£
+	case 32://ç©ºæ ¼é”®å¼€å§‹æˆ–è€…æš‚åœ
 		if(runState != 1)
 		{
 			runState = 1
@@ -24,11 +24,11 @@ function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
 		}
 		else 
 		{
-			runState = 2//2±íÊ¾´¦ÓÚÔİÍ£×´Ì¬
+			runState = 2//2è¡¨ç¤ºå¤„äºæš‚åœçŠ¶æ€
 			clearInterval(timer1)
 		}
 		break;
-	case 37://¡ûÓÃÀ´¼õÉÙÁĞÊı
+	case 37://â†ç”¨æ¥å‡å°‘åˆ—æ•°
 		if(runState === 0 && columns > minColumns)
 		{
 			columns --;
@@ -36,7 +36,7 @@ function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
 				grid[i][columns] = 0
 		}
 		break;
-	case 38://¡üÓÃÓÚ¼õÉÙĞĞÊı»òÕß¼Ó¿ìÓÎÏ·ËÙ¶È
+	case 38://â†‘ç”¨äºå‡å°‘è¡Œæ•°æˆ–è€…åŠ å¿«æ¸¸æˆé€Ÿåº¦
 		if(runState === 0 && rows > minRows)
 		{
 			rows --;
@@ -50,13 +50,13 @@ function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
 			timer1 = setInterval("drawGrid(columns,rows,grid);nextRound(columns,rows,grid)", timeInterval)
 		}
 		break;
-	case 39://¡úÓÃÓÚÔö¼ÓÁĞÊı
+	case 39://â†’ç”¨äºå¢åŠ åˆ—æ•°
 		if(runState === 0 && columns < maxColumns)
 		{
 			columns ++;
 		}
 		break;
-	case 40://¡ıÓÃÓÚÔö¼ÓĞĞÊı»òÕß¼õÂıÓÎÏ·ËÙ¶È
+	case 40://â†“ç”¨äºå¢åŠ è¡Œæ•°æˆ–è€…å‡æ…¢æ¸¸æˆé€Ÿåº¦
 		if(runState === 0 && rows < maxRows)
 		{
 			rows ++;
@@ -69,10 +69,10 @@ function keyDown(e){//½ÓÊÜ°´¼ü²Ù×÷
 		}
 		break;
 	}
-	if(runState == 0)//ÓÎÏ·»¹Ã»¿ªÊ¼
+	if(runState == 0)//æ¸¸æˆè¿˜æ²¡å¼€å§‹
 		drawGrid(columns,rows,grid)
 }
-function beClicked(event)//Êó±êµã»÷¸Ä±äÏ¸°ûµÄ´æ»îÇé¿ö
+function beClicked(event)//é¼ æ ‡ç‚¹å‡»æ”¹å˜ç»†èƒçš„å­˜æ´»æƒ…å†µ
 {
 	grid[Math.floor((event.offsetY)/(2*r) )][Math.floor((event.offsetX)/(2*r))] = 1 - grid[Math.floor((event.offsetY)/(2*r) )][Math.floor((event.offsetX)/(2*r))]
 	drawGrid(columns,rows,grid)

@@ -1,4 +1,4 @@
-function generateCellRandom(columns,rows){//Ëæ»ú³õÊ¼»¯
+ï»¿function generateCellRandom(columns,rows){//éšæœºåˆå§‹åŒ–ç»†èƒçš„å­˜æ´»æƒ…å†µ
 	for(i = 0; i < rows; i++)
 	{
 		for(j = 0; j < columns; j++)
@@ -7,7 +7,8 @@ function generateCellRandom(columns,rows){//Ëæ»ú³õÊ¼»¯
 		}
 	}
 };
-function generateCell(columns,rows){//°ÑËùÓĞµÄÏ¸°û³õÊ¼»¯ÎªËÀ
+
+function generateCell(columns,rows){//æŠŠæ‰€æœ‰çš„ç»†èƒåˆå§‹åŒ–ä¸ºæ­»
 	for(i = 0; i < rows; i++)
 	{
 		for(j = 0; j < columns; j++)
@@ -17,7 +18,7 @@ function generateCell(columns,rows){//°ÑËùÓĞµÄÏ¸°û³õÊ¼»¯ÎªËÀ
 	}
 };
 
-function countNeighbors(columns,rows,grid,x,y){
+function countNeighbors(columns,rows,grid,x,y){//è®¡ç®—xè¡Œyåˆ—ç»†èƒå‘¨å›´æ´»ç€çš„é‚»å±…æ•°
 	var count = 0
 	for(var i = x-1;i <= x + 1;i++)
 	{
@@ -30,7 +31,7 @@ function countNeighbors(columns,rows,grid,x,y){
 	return count
 }
 
-function nextRound(columns,rows,grid){
+function nextRound(columns,rows,grid){//è®¡ç®—ä¸‹ä¸€ä¸ªå›åˆçš„ç»†èƒçš„å­˜æ´»æƒ…å†µ
 	var newGrid = new Array()
 	for(i = 0; i < rows; i++)
 	{

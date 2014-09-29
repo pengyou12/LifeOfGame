@@ -1,6 +1,7 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
 <style type="text/css">
 body {
 background-color: #5B4947;
@@ -9,7 +10,7 @@ background-color: #5B4947;
 margin-top:100px;
 margin-right:100px;
 float:right;
-font-family: "΢���ź�";
+font-family: "微软雅黑";
 z-index: 0;
 }
 </style>
@@ -18,12 +19,12 @@ z-index: 0;
 <body onkeydown="keyDown(event)">
 <canvas id="myCanvas" style ="border:1px solid #c3c3c3" onmousedown = "beClicked(event)"></canvas>
 <div id="hint">
-��Ϸ˵��<br>
-ENTER���������ϸ��<br>
-�ո����ʼ����ͣ��Ϸ<br>
-��ʼǰ�����������������С<br>
-��ʼ������ӿ�ͼ����ٶ�<br>
-֧�����������ϸ��<br>
+游戏说明<br>
+ENTER键随机生成细胞<br>
+空格键开始或暂停游戏<br>
+开始前←↑→↓调整界面大小<br>
+开始后↑↓加快和减慢速度<br>
+支持鼠标点击添加细胞<br>
 </div>
 <script language="JavaScript" src="./javascript/logicLayer.js"></script>
 <script language="JavaScript" src="./javascript/presentationLayer.js"></script>
