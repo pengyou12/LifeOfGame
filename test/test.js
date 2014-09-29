@@ -7,7 +7,7 @@ function generateCellRandom(columns,rows, grid){//随机初始化
 		}
 	}
 }
-//待测函数1
+//待测函数，计算一个细胞周围活细胞的数量
 function countNeighbors(columns,rows,grid,x,y){
 	var count = 0
 	for(var i = x-1;i <= x + 1;i++)
@@ -20,7 +20,7 @@ function countNeighbors(columns,rows,grid,x,y){
 	count -= grid[x][y]
 	return count
 }
-//待测函数2
+//待测函数，更新细胞状态
 function nextRound(columns,rows,grid){
 	var newGrid = new Array()
 	for(i = 0; i < rows; i++)
@@ -50,14 +50,14 @@ function nextRound(columns,rows,grid){
 	}
 }
 
-function test1()//只有1个细胞且为活细胞
+function test1()//只有1个细胞且为活细胞的情况
 {
 	var columns = 1
 	var rows = 1
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -79,14 +79,14 @@ function test1()//只有1个细胞且为活细胞
 	alert("test2测试失败！")
 }
 
-function test2()//只有1个细胞且为死细胞
+function test2()//只有1个细胞且为死细胞的情况
 {
 	var columns = 1
 	var rows = 1
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -113,9 +113,9 @@ function test3()//测试有1行2列的情况
 	var columns = 2
 	var rows = 1
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -155,9 +155,9 @@ function test4()//测试有2行1列的情况
 	var columns = 1
 	var rows = 2
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -197,9 +197,9 @@ function test5()//测试有2行2列的情况
 	var columns = 2
 	var rows = 2
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -245,9 +245,9 @@ function test6()//测试有1行3列的情况
 	var columns = 3
 	var rows = 1
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -290,9 +290,9 @@ function test7()//测试有3行1列的情况
 	var columns = 1
 	var rows = 3
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -335,9 +335,9 @@ function test8()//测试有3行2列的情况
 	var columns = 2
 	var rows = 3
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -389,9 +389,9 @@ function test9()//测试有2行3列的情况
 	var columns = 3
 	var rows = 2
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -443,9 +443,9 @@ function test10()//测试一般情况
 	var columns = 3
 	var rows = 3
 	var i=0, j=0
-	var grid = new Array()
-	var Canswer = new Array()
-	var Nanswer = new Array()
+	var grid = new Array()//grid存储细胞状态
+	var Canswer = new Array()//Canswer中存储countNeighbors()函数对应的验证数据
+	var Nanswer = new Array()//Nanswer中存储nextRound()函数对应的验证数据
 	for(;i < rows; i++)
 	{
 		grid[i] = new Array()
@@ -501,12 +501,12 @@ function test10()//测试一般情况
 	alert("test10测试通过！")
 }
 
-//辅助函数
+//辅助函数，当columns>2&&rows>2时函数可以正确计算出细胞群下一轮的状态
 function newCountNeighbors(columns,rows,grid,x,y){
 	var count = 0
-	if(x == 0)
+	if(x == 0)//边界处理
 	{
-		if(y == 0)
+		if(y == 0)//边界处理
 		{
 			count += grid[rows-1][columns-1]
 			count += grid[rows-1][0]
@@ -517,7 +517,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[1][0];
 			count += grid[1][1];
 		}
-		else if(y == columns-1)
+		else if(y == columns-1)//边界处理
 		{
 			count += grid[rows-1][columns-2]
 			count += grid[rows-1][columns-1]
@@ -528,7 +528,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[1][columns-1];
 			count += grid[1][0];
 		}
-		else
+		else//一般情况
 		{
 			count += grid[rows-1][y-1]
 			count += grid[rows-1][y]
@@ -540,9 +540,9 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[1][y+1];
 		}
 	}
-	else if(x == rows-1)
+	else if(x == rows-1)//边界处理
 	{
-		if(y == 0)
+		if(y == 0)//边界处理
 		{
 			count += grid[rows-2][columns-1]
 			count += grid[rows-2][0]
@@ -553,7 +553,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[0][0];
 			count += grid[0][1];
 		}
-		else if(y == columns-1)
+		else if(y == columns-1)//边界处理
 		{
 			count += grid[rows-2][columns-2]
 			count += grid[rows-2][columns-1]
@@ -564,7 +564,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[0][columns-1];
 			count += grid[0][0];
 		}
-		else
+		else//一般情况
 		{
 			count += grid[rows-2][y-1]
 			count += grid[rows-2][y]
@@ -576,9 +576,9 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[0][y+1];
 		}
 	}
-	else
+	else//一般情况
 	{
-		if(y == 0)
+		if(y == 0)//边界处理
 		{
 			count += grid[x-1][columns-1]
 			count += grid[x-1][0]
@@ -589,7 +589,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[x+1][0];
 			count += grid[x+1][1];
 		}
-		else if(y == columns-1)
+		else if(y == columns-1)//边界处理
 		{
 			count += grid[x-1][columns-2]
 			count += grid[x-1][columns-1]
@@ -600,7 +600,7 @@ function newCountNeighbors(columns,rows,grid,x,y){
 			count += grid[x+1][columns-1];
 			count += grid[x+1][0];
 		}
-		else
+		else//一般情况
 		{
 			count += grid[x-1][y-1]
 			count += grid[x-1][y]
@@ -621,25 +621,26 @@ function test11()//测试一般情况
 	var rows
 	var i=0, j=0
 	var grid = new Array()
-	for(var c = 0; c < 1000; c++)
+	for(var c = 0; c < 1000; c++)//进行1000次测试
 	{
+		//随机生成行和列的数量
 		rows = Math.floor(Math.random()*100) + 3
 		columns = Math.floor(Math.random()*100) + 3
 		for(;i < rows; i++)
 		{
 			grid[i] = new Array()
 		}
-		generateCellRandom(columns,rows, grid)
+		generateCellRandom(columns,rows, grid)//初始化细胞群
 		for(i = 0; i < rows; i++)
 			for(j = 0; j < columns; j++)
 			{
-				if(countNeighbors(columns,rows,grid,i,j) != newCountNeighbors(columns,rows,grid,i,j))
+				if(countNeighbors(columns,rows,grid,i,j) != newCountNeighbors(columns,rows,grid,i,j))//测试countNeighbors()函数的正确性
 				{
 					alert("test11测试失败！")
 					return
 				}
 			}
-		var formerGrid = new Array()
+		var formerGrid = new Array()//复制grid的当前值
 		for(var i = 0; i < rows; i++)
 			formerGrid[i] = new Array()
 		for(var i=0; i < rows; i++)
@@ -652,7 +653,7 @@ function test11()//测试一般情况
 			{
 				if(grid[i][j]==1)
 				{
-					if(!((countNeighbors(columns,rows,formerGrid,i,j) == 3) || (countNeighbors(columns,rows,formerGrid,i,j) == 2 && formerGrid[i][j] == 1)))
+					if(!((countNeighbors(columns,rows,formerGrid,i,j) == 3) || (countNeighbors(columns,rows,formerGrid,i,j) == 2 && formerGrid[i][j] == 1)))//测试nextRound()函数的正确性
 					{
 						alert("test11测试失败！")
 						alert(c)
@@ -661,7 +662,7 @@ function test11()//测试一般情况
 				}
 				else
 				{
-					if((countNeighbors(columns,rows,formerGrid,i,j) == 3) || (countNeighbors(columns,rows,formerGrid,i,j) == 2 && formerGrid[i][j] == 1))
+					if((countNeighbors(columns,rows,formerGrid,i,j) == 3) || (countNeighbors(columns,rows,formerGrid,i,j) == 2 && formerGrid[i][j] == 1))//测试nextRound()函数的正确性
 					{
 						alert("test11测试失败！")
 						alert(c)
